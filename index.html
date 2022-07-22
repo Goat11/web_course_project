@@ -1,0 +1,124 @@
+<!-- 
+    文本标签太多了，用到再说，别在意，这么多标签本质上都可以看成div和span扩展出来的，
+    span甚至也可以认为是div扩展的，h标签其实就是固定封装了一些css样式的div标签
+    y总都是无脑div的
+    1. div标签
+    div其实就是divide，就是分块用的,不同块之前默认是有个回车的
+    2. span标签
+    span标签是行内元素，可在同一行内显示
+ -->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>G.O.A.T</title>
+        <meta charset="UTF-8">
+        <meta name="desciption" content="搜索引擎里显示的内容">
+        <meta name="keywords" content="搜索引擎里搜索依据的key值">
+        <link rel="icon" href="/images/卡比.jpg">
+    </head>
+
+    <body>
+        <h1>Goat</h1>
+
+        <h2>1.文本标签</h2>
+
+        <div>复习事实上</div>
+        <div>复习事实上</div>
+        <span>复习事实上</span> <span>复习事实上</span>
+
+        <!--
+    p标签就是有一定限制的div标签，css样式固定了一些而已
+    <br>可以在p标签内实现换行<b>是加粗<i>是斜体<del>是删除线<ins>是下划线
+    -->
+        <p>
+            <ins>1965年,</ins><br>
+            他以著名论文<b>《引力坍塌和时空奇点》</b>为代表的一系列论文，
+            和著名数学物理学家<i>斯蒂芬.霍金</i>一起创立了<mark>现代宇宙论</mark>的数学结构理论。
+        </p>
+
+        <!-- 
+       pre标签是等宽字体
+       并且，一般的标签都会自动过滤空格和回车，而pre标签不会，在显示代码上就不错
+       此外，大于小于号在标签内部想要使用，就得用&lt和&gt转义得到
+    -->
+        <pre>
+
+#include &lt bits/stdc++.h &gt
+using namespace std;
+
+int main()
+{
+	cout &lt&lt "I'm gonna win! Today!" &lt&lt endl;
+	cout &lt&lt "2022-04-23" &lt&lt endl;
+}
+   </pre>
+
+        <hr><!-- hr是分割线 -->
+
+        <h2>2.图片、音频、视频标签</h2>
+        <!-- src是图片的地址，这个地址可以是本地地址，也可以是外部的地址
+    （如直接复制网上某个图片的地址） 
+    alt是用于描述这个图片-->
+
+        <img height="200" src="/images/wufan.jpg" alt="悟饭">
+        <img height="200" src="/images/bro.png" alt="老友记">
+        <audio controls src="/audios/J. Cole - Love Yourz.mp3">
+            sorry，不能播放
+        </audio>
+        <video controls height="200" src="/videos/半途.mp4"></video>
+
+        <hr>
+
+        <h2>3.超链接</h2>
+        <!-- 超链接就是靠a标签实现，a标签内写啥都可以，都会变成一个超链接 -->
+        <span>这是哔哩哔哩的链接：</span>
+        <a href="https://www.bilibili.com/">哔哩啪啦</a>
+        <br>
+        <br>
+        <span>这是站内其它网页的链接：</span>
+        <a href="/about.html">
+            <img height="200" src="/images/sky.png">
+        </a>
+        <!-- 
+    （1）form标签是交互所需的根结点
+    （2）input标签中，name是参数名，是url中跟着的变量参数名
+    用于与后端交换，id是标签名，用于标识标签，这其实都是习惯，都是人为规定的
+    事实上标签的属性名都可以随便设，都是可以的
+    （3）label标签是可以通过for属性绑定其它标签，如这里绑定input
+    （4）button和这些input之所以绑定在一起，是因为button在form里面
+    button会把form里面的东西全部提交，这其实也是人为设定的，以后学了js自己都能定义
+    （5）radio标签中name值相同的button将是互斥的，一次只能选择其中一者
+    （6）action是加上要接受返回值的页面
+ -->
+        <hr>
+        <h2>4.表单类型（与后端服务器交换）</h2>
+        <form action="/about.html">
+            <label for="username">用户名</label>
+            <input type="text" name="username" id="username">
+            <br>
+            <label for="password">密码__</label>
+            <input type="password" name="password" id="password">
+            <br><br>
+            <div>选择你的编译器：</div>
+            <label for="compile">c++</label>
+            <input type="radio" name="compile" value="c++" id="compile">
+            <label for="compile">c++11</label>
+            <input type="radio" name="compile" value="c++11" id="compile">
+            <label for="compile">java</label>
+            <input type="radio" name="compile" value="java" id="compile">
+            <br><br>
+            <span>上传图片：</span>
+            <input type="file" name="picture" value="c++" id="picture">
+
+            <br><br>
+            <textarea></textarea>
+
+            <br><br>
+            <button type="submit">提交</button>
+
+        </form>
+
+    </body>
+
+</html>
